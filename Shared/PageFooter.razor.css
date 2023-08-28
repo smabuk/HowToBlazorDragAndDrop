@@ -1,0 +1,49 @@
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-left: 1rem;
+	padding-top: 12px;
+	height: var(--sb-footer-size, 50px);
+	background-color: rgba(25, 25, 25, 1);
+	color: #fff;
+	text-align: left;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.social-media-icons {
+	position: relative;
+	top: -8px;
+	font-size: 30px;
+	float: right;
+	margin-left: 8px;
+}
+
+.social-media-icons a {
+	margin: 4px;
+}
+
+.bi-facebook {
+	color: #1a6ed8;
+}
+
+.bi-instagram {
+	background: #d6249f;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+	-webkit-text-fill-color: transparent;
+}
+
+.bi-whatsapp {
+	color: #53cc60;
+}
+
+.bi-twitter {
+	color: #61bdf5;
+}
+
+.bi-github {
+	color: #fff;
+}

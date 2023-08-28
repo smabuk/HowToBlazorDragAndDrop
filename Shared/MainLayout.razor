@@ -1,0 +1,22 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+@*     <div class="sidebar">
+        <NavMenu />
+    </div>
+ *@
+    <main>
+@*         <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+ *@
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+	<PageFooter GithubId="https://github.com/smabuk"
+				TwitterId="https://twitter.com/smabuk">
+		© Simon Brookes (smabuk) 2023@(DateTime.Now.Year != 2023 ? $"-{DateTime.Now.Year}" : "")
+	</PageFooter>
+
+</div>

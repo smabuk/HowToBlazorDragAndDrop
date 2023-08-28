@@ -1,0 +1,19 @@
+﻿<button type="button" title="@Title" class="button @CssClass" @onclick="Click">@Text</button>
+
+@code {
+
+	[Parameter]
+	public string Title { get; set; } = "";
+
+	[Parameter]
+	public string Text { get; set; } = "";
+
+	[Parameter]
+	public string CssClass { get; set; } = "btn btn-primary";
+
+	[Parameter]
+	public EventCallback OnClick { get; set; }
+
+	public async Task Click() => await OnClick.InvokeAsync();
+
+}

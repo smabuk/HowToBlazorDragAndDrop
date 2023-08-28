@@ -1,0 +1,41 @@
+<footer>
+	@ChildContent
+	<span class="social-media-icons">
+		@if (FacebookId is not null) {
+			<a href="@FacebookId" title="Facebook" target="_blank">
+				<i class="bi bi-facebook"></i>
+			</a>
+		}
+		@if (GithubId is not null) {
+			<a href="@GithubId" title="Github" target="_blank">
+				<i class="bi bi-github"></i>
+			</a>
+		}
+		@if (InstagramId is not null) {
+			<a href="@InstagramId" title="Instagram" target="_blank">
+				<i class="bi bi-instagram"></i>
+			</a>
+		}
+		@if (TwitterId is not null) {
+			<a href="@TwitterId" title="Twitter" target="_blank">
+				<i class="bi bi-twitter"></i>
+			</a>
+		}
+		@if (WhatsAppId is not null) {
+			<a href="@WhatsAppId" title="Whatsapp" target="_blank">
+				<i class="bi bi-whatsapp"></i>
+			</a>
+		}
+	</span>
+</footer>
+
+@code {
+	[Parameter]
+	public RenderFragment? ChildContent { get; set; }
+
+	[Parameter] public string? FacebookId { get; set; }
+	[Parameter] public string? GithubId { get; set; }
+	[Parameter] public string? InstagramId { get; set; }
+	[Parameter] public string? TwitterId { get; set; }
+	[Parameter] public string? WhatsAppId { get; set; }
+}

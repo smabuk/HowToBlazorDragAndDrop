@@ -1,0 +1,54 @@
+.confirm-container {
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(4, 4, 4, 0.77);
+}
+
+.confirm-dialog {
+	color: #fff;
+	background-color: rgba(25, 25, 25, 0.9);
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightblue;
+	padding: 10px;
+	border-radius: 15px;
+	min-width: 250px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+::deep .btn {
+	color: #fff;
+	width: 100%;
+
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	border-radius: .4rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+::deep .btn-yes {
+	background-color: darkgreen;
+}
+
+::deep .btn-no {
+	background-color: darkred;
+}
