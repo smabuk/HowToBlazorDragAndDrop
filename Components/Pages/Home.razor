@@ -1,0 +1,71 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>How to do Blazor Drag and Drop</PageTitle>
+
+<div>
+	<ol>
+		@foreach (string name in Movies) {
+			<li draggable="true" @ondragstart="() => DragStart(name)" @ondragend="() => DragEnd()">
+				<span>@name</span>
+			</li>
+		}
+	</ol>
+	<br />
+	<div>
+		<span class="bi bi-trash trash" droponme="@isOverDropZone"
+		@ondragenter:preventDefault
+		@ondragleave:preventDefault
+		@ondragover:preventDefault
+			@ondragenter="() => DragEnter()"
+			@ondragleave="() => DragLeave()"
+			@ondragover= "() => DragOver()"
+			@ondrop=     "() => Drop()"> Drop Zone</span>
+	</div>
+
+</div>
+
+@code {
+	public List<string> Movies = [
+		"Jaws",
+		"The Terminator",
+		"Star Wars",
+		"Elemental",
+		"Raiders of the Lost Ark",
+		"Big",
+		"Airplane II",
+		"Groundhog Day",
+		"Barbie",
+		"Airplane",
+		"Teenage Mutant Ninja Turtles",
+		];
+
+	private bool isOverDropZone = false;
+	private string dragId = "";
+
+	private void DragStart(string name) => dragId = name;
+	private void DragEnter() => isOverDropZone = true;
+	private void DragLeave() => isOverDropZone = false;
+	private void DragOver() { }
+	private void DragEnd()
+	{
+		dragId = "";
+		isOverDropZone = false;
+	}
+
+	private void Drop()
+	{
+		Movies.Remove(dragId);
+		dragId = "";
+		isOverDropZone = false;
+	}
+
+	private readonly string[] descConcepts = [
+		"NO JavaScript",
+	];
+
+	private readonly string[] descTechnologies = [
+		"html5 drag and drop",
+	];
+
+}
